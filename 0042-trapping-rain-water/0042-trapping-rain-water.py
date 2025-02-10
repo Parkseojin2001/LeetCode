@@ -1,7 +1,7 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
         if not height:
-            return 0
+            return
         
         volume = 0
         left, right = 0, len(height) - 1
@@ -17,3 +17,10 @@ class Solution:
                 right -= 1
         return volume
 
+            
+
+
+
+
+            
+        
