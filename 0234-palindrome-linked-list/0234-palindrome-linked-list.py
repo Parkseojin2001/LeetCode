@@ -11,7 +11,7 @@ class Solution:
         node = head
         q = collections.deque()
 
-        while node in not None:
+        while node is not None:
             q.append(node.val)
             node = node.next
         
