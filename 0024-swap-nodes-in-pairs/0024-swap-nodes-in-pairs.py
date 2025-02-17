@@ -5,19 +5,15 @@
 #         self.next = next
 class Solution:
     def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        root = prev = ListNode(None)
-        prev.next = head
-        while head and head.next:
-            # b가 a(head)를 가리키도록 할당
-            b = head.next
-            head.next = b.next
-            b.next = head
-
-            # prev가 b를 가리키도록 할당
-            prev.next = b
-
-            # 다음번 비교를 위한 이동
-            head = head.next
-            prev = prev.next.next
-            
-        return root.next
+        if head == None or head.next == None:
+            return head
+        point1, point2 = head, head.next
+        while point2:
+            point1.val, point2.val = point2.val, point1.val
+            if point2.next == None:
+                break
+            point1 = point2.next
+            if point1.next == None:
+                break
+            point2 = point1.next
+        return head
