@@ -7,15 +7,14 @@ class Solution:
     def oddEvenList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         if head is None:
             return head
-        odd = head
-        even = head.next
-        even_head = head.next
-        
-        # 홀짝 노드 처리
+        odd, even = head, head.next
+        even_head = even
         while even and even.next:
             odd.next, even.next = odd.next.next, even.next.next
             odd, even = odd.next, even.next
         
-        # 홀수 노드의 마지막을 짝수 헤드로 연결
         odd.next = even_head
         return head
+
+        
+        
