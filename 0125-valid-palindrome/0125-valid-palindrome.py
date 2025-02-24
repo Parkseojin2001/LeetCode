@@ -1,12 +1,10 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        strs = []
-        for char in s:
-            if char.isalnum():
-                strs.append(char.lower())
-        while len(strs) > 1:
-            if strs.pop(0) != strs.pop():
-                return False
-        return True
+        s = s.lower()
+        s = re.sub('[^0-9a-z]', '', s)
+        if s[:] == s[::-1]:
+            return True
             
-            
+        else:
+            return False
+        
