@@ -9,3 +9,4 @@ class Solution:
                 max_profit = price - start
         return max_profit
             
+            
