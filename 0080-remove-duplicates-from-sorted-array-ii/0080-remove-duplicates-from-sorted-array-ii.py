@@ -5,6 +5,4 @@ class Solution:
             if nums[i] != nums[k - 2]:
                 nums[k] = nums[i]
                 k += 1
-
-        
         return k
