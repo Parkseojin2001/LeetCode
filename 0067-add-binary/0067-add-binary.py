@@ -44,10 +44,8 @@ class Solution:
 
         if rest == 1:
             plus_ab.append(str(rest))
-        plus_ab = reversed(plus_ab)
         
-        result = ''.join(plus_ab)
-        return result
+        return "".join(plus_ab[::-1])
         
 
 
